@@ -1,5 +1,4 @@
 const readline = require('readline');
-const { threadId } = require('worker_threads');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
