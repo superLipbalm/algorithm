@@ -14,7 +14,6 @@ const splitToNumber = (input) => input.split(' ').map((el) => +el);
   }
   rl.close();
 
-  const [RED, GREEN, BLUE] = [0, 1, 2];
   const n = +input.shift();
   const costs = input.map((el) => splitToNumber(el));
   const dp = Array.from({ length: n }, (_, idx) => new Array(idx + 1).fill(0));
