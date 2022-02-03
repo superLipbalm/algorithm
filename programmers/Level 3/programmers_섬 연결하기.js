@@ -23,7 +23,7 @@
 
 function solution(n, costs) {
   let total = 0;
-  const bridges = [];
+  let bridgeCount = 0;
   const cycles = {};
   const cycleTable = Array.from(Array(n), (v, i) => i);
 
@@ -41,10 +41,10 @@ function solution(n, costs) {
         cycles[bCycle].forEach((node) => (cycleTable[node] = aCycle));
         delete cycles[b];
       }
-
+      bridgeCount += 1;
       total += cost;
     }
-    if (bridges.length === n - 1) break;
+    if (bridgeCount === n - 1) break;
   }
 
   return total;
